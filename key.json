@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "flawless-point-204400",
+  "private_key_id": "ca3b99dc2c4efda6922254df7cd32e652c4aa960",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdf8QzXxcOYwDD\nawwjBDYSEhLqWDA80yBOPlMijV8Buoe2qM3itsddsf9MrZHcAUJm9ROcXAa8AF/S\nOPeT1wWaApSMWsrPFxewX3Ce2sPww229qkNA0bmWwzhdEHivvfIEowLjJ5UeTmXX\nfR2zp1gXcu/NhM9lQKnBpLrIFtxQaBCSTGGxGBPUEzym84QxY+ERg9JjNNQrWjAO\nJJh+PmT8j+GNVuTjzfkSWVZklqh+n4fk5nvJ2O9kcblh7zVLGt40WuEt5agWPZfh\nLItQmujT4SKfllg71l5lyajHn604bB29pjBFNB+8BUpLXsffu3vinX+GhBPmEexS\nc+QfX4qvAgMBAAECggEABbr+2AGnNJpMjk+oRuPh1cF7l7QyuRvTapVg7/pl0QnI\n40/8Abo1wcZ2rAMKsg8Hq/hRyNgeVJvM4Li65VGm/gYHAp5RD7ze20d1sQnzpCBw\nLzzxKnwW/RHITLaLNZW7JwkJU1t+1PX0RaVjPcSic2P2rqsc4qm6I3YLZ7lRNcms\n2ZV472S5viYu36iqTOWCfEHvyvGMiGlsqe37qO9pvzcxwYMKsUKflKSoTVDm6qDb\nkGE4Zegbuheb/AJdaOPfwqTil0lZhlA70GCoJricPdK53lzPJ5UgJphZ/MTalgU7\n+ikFu3y1CyudNlCfzxZBExhrHqxenW4Su3/Tr61U+QKBgQDbPbN4Ky+IaidYQr5l\nIL01I3kqY5uUq9olk1BlG8M31frCjquXFE5YyMUStUfOSX6ftN14FrbGy2pG/mKu\ntfaDCaV72xgd7E85Xo+/HWchksn2M8Kcp50ItCBkn4okD7QZ5rVoQmFwUECuACEg\ng/QY8VY+BdbO/rrINV2qBtiS1wKBgQC35/fRAXZn/5bcTX8mhRp42flCLif8WTsb\nkNJrb3bBSzLWBYIcBEkocevEycAXnT0DwPDUICgoChjG+dDC/7hV9TpIQ54pF8Jx\n++611BtbogpFDQJTPJaNSGT59TZnTOseXm3QRteRGtr0OrmWbTfUK3fd6paxTh4P\n0JYgYfWj6QKBgQC0pyjlEiC+tUnqTkT4q3t899f1d9JRNTIx2CtcxP2dWrKf8lOt\nz8unGPharAmZD7JJAw2i0ISXVjIigabq84FHBIHZhvVeYsP9L9Ae2KmMXpoQRyJL\nV0nsTBCNGXEIue/bj+FXIauMknRZbD3fvxs6GlLIFKOmOPvL0T12xuFaTQKBgEuE\nHjedsSBNTIZT8DVCDLe5UegCCftOLL5J/o2NLKd8mHhXtLCKdfv8o4KgEZfgwjAr\nZvjD55lhZAE4jae01928H92SnnxjPD4P5FqXqVA8PplSGTVSuMN1Cbm2HkvWwukq\nf08598Sm0WfeQVzqpjUiUEs4y/4shJ2b2jmb4AEZAoGAIkaf/y6/zTEik4IiDzta\nJJmX3j+KQ1FnEUB6GvpTfjg28yLJDkWcaQ7g2JCj8laenMVVPHEaxNfl8NNWdvMM\nG9uIktyxxYHNle0oWkBauAlf+HdWkPJ3p9AsQNx2Mx0eaizAhnHvLV2TvKMV53d+\nuugKLtmYfcYKtTaH3KF5Skw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "vision@flawless-point-204400.iam.gserviceaccount.com",
+  "client_id": "107330844417182217338",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision%40flawless-point-204400.iam.gserviceaccount.com"
+}
