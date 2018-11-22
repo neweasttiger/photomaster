@@ -22,6 +22,7 @@ import argparse
 from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
+import os
 # [END vision_face_detection_tutorial_imports]
 
 
@@ -74,11 +75,12 @@ def highlight_faces(image, faces, output_filename):
 def main(input_filename, output_filename, max_results):
     with open(input_filename, 'rb') as image:
         faces = detect_face(image, max_results)
-        print('Found {} face{}'.format(
+        
+        os.system("mkdir {}" .format(len(faces) ))
+        print('{}'.format(
             len(faces), '' if len(faces) == 1 else 's'))
-
-        print('Writing to file {}'.format(output_filename))
         # Reset the file pointer, so we can read the file again
+
         image.seek(0)
         highlight_faces(image, faces, output_filename)
 # [END vision_face_detection_tutorial_run_application]
