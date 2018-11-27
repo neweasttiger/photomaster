@@ -8,7 +8,7 @@
 void facedetect(){
     
   system("python faces.py face_example.jpg ");
- 
+  
 }
 
 
