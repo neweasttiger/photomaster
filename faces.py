@@ -76,7 +76,7 @@ def main(input_filename, output_filename, max_results):
     with open(input_filename, 'rb') as image:
         faces = detect_face(image, max_results)
         
-        os.system("mkdir {}" .format(len(faces) ))
+        os.system("./sort {} {}".format(len(faces),input_filename))
         print('{}'.format(
             len(faces), '' if len(faces) == 1 else 's'))
         # Reset the file pointer, so we can read the file again

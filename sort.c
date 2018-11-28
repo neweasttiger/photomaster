@@ -5,6 +5,7 @@
 int main (int argc, char *argv[]){
 	char mk[40] = "mkdir ";
 	char cp[30] = "cp ";
+	
 	strcat(mk,argv[1]);
 
 	system(mk);
