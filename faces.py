@@ -67,7 +67,7 @@ def highlight_faces(image, faces, output_filename):
                for vertex in face.bounding_poly.vertices]
         draw.line(box + [box[0]], width=5, fill='#00ff00')
 
-    im.save(output_filename)
+#    im.save(output_filename)
 # [END vision_face_detection_tutorial_process_response]
 
 
@@ -76,7 +76,7 @@ def main(input_filename, output_filename, max_results):
     with open(input_filename, 'rb') as image:
         faces = detect_face(image, max_results)
         
-        os.system("mkdir {}" .format(len(faces) ))
+        os.system("./sort {} {}".format(len(faces),input_filename))
         print('{}'.format(
             len(faces), '' if len(faces) == 1 else 's'))
         # Reset the file pointer, so we can read the file again
