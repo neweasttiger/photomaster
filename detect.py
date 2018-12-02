@@ -3,7 +3,7 @@
 import argparse
 import io
 import re
-
+import os
 
 # [START vision_face_detection]
 def detect_faces(path):
@@ -55,8 +55,7 @@ def detect_labels(path):
 
     response = client.label_detection(image=image)
     labels = response.label_annotations
-    print('Labels:')
-
+    os.system("./sort {} {}".format(labels[0].description,path))
     for label in labels:
         print(label.description)
     # [END vision_python_migration_label_detection]
