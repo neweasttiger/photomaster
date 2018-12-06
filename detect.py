@@ -56,8 +56,6 @@ def detect_labels(path):
     response = client.label_detection(image=image)
     labels = response.label_annotations
     os.system("./sort {} {}".format(labels[0].description,path))
-    for label in labels:
-        print(label.description)
     # [END vision_python_migration_label_detection]
 # [END vision_label_detection]
 

@@ -30,9 +30,7 @@ void facedetect(){
   for (idx =0 ; idx< count; idx++){
 	char p[100] = "python faces.py ";
 	strcat(p, namelist[idx]->d_name);
-	printf("%s",p);
   	system(p);
-
   }
   exit(0);
   

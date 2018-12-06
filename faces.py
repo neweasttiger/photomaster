@@ -44,8 +44,8 @@ def main(input_filename, output_filename, max_results):
         if len(faces)>0:
             os.system("./sort {} {}".format(len(faces),input_filename))
         
-            print('{}'.format(
-            len(faces), '' if len(faces) == 1 else 's'))
+        #    print('{}'.format(
+#            len(faces), '' if len(faces) == 1 else 's'))
              # Reset the file pointer, so we can read the file again
         else:
             os.system("python detect.py labels {}".format(input_filename))
