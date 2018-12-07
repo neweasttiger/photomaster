@@ -3,11 +3,20 @@
 #include <string.h>
 #include <dirent.h>
 void remove_image (char *image)
-{	char path[50];
+{	char path[50]="";
 	strcat(path, "./");
 	strcat(path,image);
-	if(remove(path) !=0)
+	if(remove(path)!=0)
 		printf("remove error \n");
+}
+
+void write_log(char *image,char *path)
+{	char ss[50] ="./";
+	strcat (ss , path);
+	strcat (ss , "/log.txt");
+	FILE *p = fopen(ss,"wt");
+	fwrite(image,strlen(image),1,p);
+	fclose(p);
 }
 	
 int main (int argc, char *argv[]){
@@ -34,7 +43,7 @@ int main (int argc, char *argv[]){
 				if(system(cp)!=0){
 					printf("cp error\n");
 				}
-
+				write_log(argv[2],argv[1]);
 				remove_image(argv[2]);
 				return 0;
 			}
@@ -54,7 +63,8 @@ int main (int argc, char *argv[]){
 	if(system(cp)!=0){
 		printf("cp error\n");
 	}
-
+	
+	write_log(argv[2],argv[1]);
 	remove_image(argv[2]);
 	closedir(dir_info);
 
