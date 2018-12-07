@@ -36,31 +36,33 @@ void facedetect(){
   
 }
 void upload()
-{	int n;
+{	char n[5];
 	printf("how many people do you want to upload?\n");
-	scanf("%d",&n);
+	scanf("%s",n);
+	printf("%s",n);
 	DIR *dir_info;
 	struct dirent *dir_entry;
 	dir_info = opendir(".");
+	FILE *f = fopen("path.txt","wt");
 	if(NULL!= dir_info)
 	{
 		while( dir_entry = readdir(dir_info))
 		{
 			if(strcmp(dir_entry->d_name, n) ==0)
-			{
-				// here upload code 
-				// enter dir (cd n )
-				// find image(.jpg , .jpg)
-				// upload (python facebook~~ image)		
+			{	char path[20] ="./";
+				strcat(path,dir_entry->d_name);
+				fwrite(path,strlen(path),1,f);
+				return ;
 			}
 		}
 	}
-	printf"No exit your choice\n");
+	printf("No exit your choice\n");
 }
 int main(){
 	int n;
 	printf("1. auto sort 2. auto uproading SNS\n");
 	scanf("%d",&n);
+	fflush(stdin);
 	switch(n)
 	{
 		case 1:
