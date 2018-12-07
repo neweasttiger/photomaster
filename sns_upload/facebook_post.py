@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*- 
 
 import facebook
-
-graph = facebook.GraphAPI('EAAhMWuz15eEBAOafZAQq9WFpjrrVz9B77vMV3gdafLZAtQoaXvyRo099ZBuV3btiulYZCKzC3DZCNKJJJ1Q2W6ZAWM7OVay3ZCSZBT7quwzqRJo645fUxKoya9cHcWmep7kGE9Tu4AzSmpZBX5K5ICHG73MIfZAdcPET8uzAV7mWWTCEk2UrdGDkzgSoHV6EIffrZCOINceRfZAbfAZDZD')
-photo = open("picture.jpg", "rb")
-#graph.put_object("287793918534663", "photos", message="You can put a caption here", source=photo.read())
+import sys
+import os
 
 
-# Upload an image with a caption.
-graph.put_photo(image=open('picture.jpg', 'rb'),
+r = open('/home/hongle/sweng-2018/coproject/photomaster/wildlife/picture.txt', mode='rt')
+s=r.read()
+
+print s.splitlines()[0]
+graph = facebook.GraphAPI('EAAhMWuz15eEBADoMzNS96n4KxN1Fh0OMwinCjkDmQFeqnEiFFpQtdtZAsdp211NZCVJRhpbEloAgZAzh8WDArnjXZBESwdxRCMSZAAyUzkKJmPhnDgWvDythw40SlELhC6MiXBO7ZBa53FuQYUPZBzYFAUoTa4d2eNBpVBlNJDZCALHelHupgXr2lwd2QH6MihcHG8BFemuiNQZDZD')
+
+graph.put_photo(image=open(s.splitlines()[0], 'rb'),
                 message='Look at this cool photo!')
 
-photo.close()
+
+r.close()
+
