@@ -35,13 +35,44 @@ void facedetect(){
   exit(0);
   
 }
-
-
+void upload()
+{	int n;
+	printf("how many people do you want to upload?\n");
+	scanf("%d",&n);
+	DIR *dir_info;
+	struct dirent *dir_entry;
+	dir_info = opendir(".");
+	if(NULL!= dir_info)
+	{
+		while( dir_entry = readdir(dir_info))
+		{
+			if(strcmp(dir_entry->d_name, n) ==0)
+			{
+				// here upload code 
+				// enter dir (cd n )
+				// find image(.jpg , .jpg)
+				// upload (python facebook~~ image)		
+			}
+		}
+	}
+	printf"No exit your choice\n");
+}
 int main(){
-	
-		facedetect();
-	
-	
-	
-return 0;
+	int n;
+	printf("1. auto sort 2. auto uproading SNS\n");
+	scanf("%d",&n);
+	switch(n)
+	{
+		case 1:
+			facedetect();
+			break;
+		case 2:
+			upload();
+			break;
+		default :
+			printf("Input error\n");
+			break;
+
+	}
+	return 0;
 }
