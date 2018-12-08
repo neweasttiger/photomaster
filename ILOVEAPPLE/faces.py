@@ -42,7 +42,7 @@ def main(input_filename, output_filename, max_results):
         faces = detect_face(image, max_results)
         
         if len(faces)>0:
-            os.system("./sort {} {}".format(len(faces),input_filename))
+            os.system("./ILOVEAPPLE/sort {} {}".format(len(faces),input_filename))
         
         else:
             os.system("python ./ILOVEAPPLE/detect.py labels {}".format(input_filename))

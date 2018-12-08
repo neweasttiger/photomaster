@@ -27,6 +27,7 @@ void facedetect(){
   char file_path[1024];
   const char *path =".";
   count  = scandir(path, &namelist, pictur,alphasort);
+  // boonsukjoong
   for (idx =0 ; idx< count; idx++){
 	char p[100] = "python ILOVEAPPLE/faces.py ";
 	strcat(p, namelist[idx]->d_name);
@@ -40,23 +41,27 @@ void upload()
 	char ss[500];
 	printf("what do you want to upload? (Input dir name)\n");
 	scanf("%s",n);
-	
+	getchar();
 	printf("Input comments to upload\n");
 	scanf("%[^\n]s",ss);
+
 	DIR *dir_info;
 	struct dirent *dir_entry;
 	dir_info = opendir(".");
-	FILE *f = fopen("path.txt","wt");
+	FILE *f = fopen("ILOVEAPPLE/path.txt","wt");
 	if(NULL!= dir_info)
 	{
 		while( dir_entry = readdir(dir_info))
 		{
 			if(strcmp(dir_entry->d_name, n) ==0)
-			{	char path[20] ="./";
+			{	//uploading
+				char path[20] ="./";
 				strcat(path,dir_entry->d_name);
 				strcat(path,"\n");
 				fwrite(path,strlen(path),1,f);
 				fwrite(ss,strlen(ss),1,f);
+				fclose(f);
+				system("python ./ILOVEAPPLE/sns_upload/facebook_post.py");
 				return ;
 			}
 		}

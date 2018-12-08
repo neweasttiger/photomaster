@@ -1,10 +1,18 @@
 
-autoputo : autoputo.c libsort.a 
-	gcc -o ../autoputo autoputo.c -L. -lsort
+include = ./include/
+libs = ./lib/
 
-libsort.a : filesort.o 
-	ar rv libsort.a filesort.o
+all : sort autoputo
 
-filesort.o : filesort.c filesort.h
-	gcc -c filesort.c filesort.h
+sort : $(include)sort.c
+	gcc -o sort $(include)sort.c
+
+autoputo : $(include)autoputo.c $(lib)libsort.a 
+	gcc -o ../autoputo $(include)autoputo.c -L./lib -lsort
+
+libsort.a : $(include)filesort.o 
+	ar rv $(libs)libsort.a $(include)filesort.o
+
+filesort.o : $(include)filesort.c $(include)filesort.h
+	gcc -c $(include)filesort.c $(include)filesort.h
 
