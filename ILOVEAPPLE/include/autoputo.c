@@ -4,7 +4,9 @@
 
 int main(){
 	int n;
-	printf("1. auto sort 2. auto uproading SNS\n");
+	while(1){
+
+	printf("1. Auto sort 2. Auto uproad 3. exit\n");
 	scanf("%d",&n);
 	fflush(stdin);
 	switch(n)
@@ -15,10 +17,14 @@ int main(){
 		case 2:
 			upload();
 			break;
+		case 3:
+			printf("Good Bye :)\n");
+			return 0;
 		default :
 			printf("Input error\n");
 			break;
 
+	}
 	}
 	return 0;
 }

@@ -27,14 +27,43 @@ void facedetect(){
   char file_path[1024];
   const char *path =".";
   count  = scandir(path, &namelist, pictur,alphasort);
-  // boonsukjoong
   for (idx =0 ; idx< count; idx++){
 	char p[100] = "python ILOVEAPPLE/faces.py ";
+ 	 printf("Detecting...\n");
 	strcat(p, namelist[idx]->d_name);
   	system(p);
   }
   exit(0);
   
+}
+void selectupload(char *nn)
+{	
+	DIR *dir2_info;
+	struct dirent *dir2_entry;
+	char we[10] ="./";
+	strcat(we,nn);
+	dir2_info = opendir(we);
+
+	if(NULL!= dir2_info)
+	{
+		while( dir2_entry = readdir(dir2_info))
+		{	
+			if(strlen(dir2_entry->d_name)>3){
+				printf("%s\n",dir2_entry->d_name);
+			}
+		}
+	}
+	
+	char ii[30];
+	printf("Input your image name for uploading\n");
+	scanf("%s",ii);			
+
+	char ss[50] ="./";
+        strcat (ss , nn);
+        strcat (ss , "/log.txt");
+        FILE *p = fopen(ss,"wt");
+        fwrite(ii,strlen(ii),1,p);
+        fclose(p);
 }
 void upload()
 {	char n[20];
@@ -42,9 +71,6 @@ void upload()
 	printf("what do you want to upload? (Input dir name)\n");
 	scanf("%s",n);
 	getchar();
-	printf("Input comments to upload\n");
-	scanf("%[^\n]s",ss);
-
 	DIR *dir_info;
 	struct dirent *dir_entry;
 	dir_info = opendir(".");
@@ -53,18 +79,26 @@ void upload()
 	{
 		while( dir_entry = readdir(dir_info))
 		{
-			if(strcmp(dir_entry->d_name, n) ==0)
-			{	//uploading
+			if(strcmp(dir_entry->d_name, n) ==0){
+				selectupload(n);
+				
+				printf("Input comments to upload\n");
+				getchar();
+				scanf("%[^\n]s",ss);
+				
+				printf("Uploading ...\n");
 				char path[20] ="./";
 				strcat(path,dir_entry->d_name);
 				strcat(path,"\n");
 				fwrite(path,strlen(path),1,f);
 				fwrite(ss,strlen(ss),1,f);
 				fclose(f);
+
 				system("python ./ILOVEAPPLE/sns_upload/facebook_post.py");
+				printf("Upload complete\n");
 				return ;
 			}
 		}
 	}
-	printf("No exit your choice\n");
+	printf("Not exit your choice\n");
 }

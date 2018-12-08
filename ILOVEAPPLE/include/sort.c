@@ -36,8 +36,9 @@ int main (int argc, char *argv[]){
 			if(strcmp(dir_entry->d_name, argv[1]) ==0)
 			{
 				move_image(argv[2],argv[1]);
-				write_log(argv[2],argv[1]);
+			//	write_log(argv[2],argv[1]);
 				closedir(dir_info);
+				printf("Sort complete\n");
 				return 0;
 			}
 		}
@@ -47,8 +48,9 @@ int main (int argc, char *argv[]){
 	system(mk);
 	
 	move_image(argv[2],argv[1]);
-	write_log(argv[2],argv[1]);
+//	write_log(argv[2],argv[1]);
 	closedir(dir_info);
+	printf("Sort complete\n");
 
 	return 0;
 }
