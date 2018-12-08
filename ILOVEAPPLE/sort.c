@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-void remove_image (char *image)
-{	char path[50]="";
-	strcat(path, "./");
-	strcat(path,image);
-	if(remove(path)!=0)
-		printf("remove error \n");
+
+void move_image (char *image ,char *path)
+{	char paths[50]="mv ";
+	strcat(paths, image);
+	strcat(paths," ./");
+	strcat(paths,path);
+	system(paths);
 }
+
 
 void write_log(char *image,char *path)
 {	char ss[50] ="./";
@@ -31,20 +33,11 @@ int main (int argc, char *argv[]){
 	{
 		while( dir_entry = readdir(dir_info))
 		{	
-			if(strcmp(dir_entry->d_name,argv[1]) ==0)
+			if(strcmp(dir_entry->d_name, argv[1]) ==0)
 			{
-				strcat(cp,argv[2]);
-				strcat(cp," ");
-				strcat(cp,"./");
-				strcat(cp,argv[1]);
-				strcat(cp,"/");
-				strcat(cp,argv[2]);
-						
-				if(system(cp)!=0){
-					printf("cp error\n");
-				}
+				move_image(argv[2],argv[1]);
 				write_log(argv[2],argv[1]);
-				remove_image(argv[2]);
+				closedir(dir_info);
 				return 0;
 			}
 		}
@@ -53,19 +46,8 @@ int main (int argc, char *argv[]){
 	strcat(mk,argv[1]);
 	system(mk);
 	
-	strcat(cp,argv[2]);
-	strcat(cp," ");
-	strcat(cp,"./");
-	strcat(cp,argv[1]);
-	strcat(cp,"/");
-	strcat(cp,argv[2]);
-						
-	if(system(cp)!=0){
-		printf("cp error\n");
-	}
-	
+	move_image(argv[2],argv[1]);
 	write_log(argv[2],argv[1]);
-	remove_image(argv[2]);
 	closedir(dir_info);
 
 	return 0;

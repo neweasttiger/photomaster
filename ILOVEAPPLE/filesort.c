@@ -28,7 +28,7 @@ void facedetect(){
   const char *path =".";
   count  = scandir(path, &namelist, pictur,alphasort);
   for (idx =0 ; idx< count; idx++){
-	char p[100] = "python faces.py ";
+	char p[100] = "python ILOVEAPPLE/faces.py ";
 	strcat(p, namelist[idx]->d_name);
   	system(p);
   }
@@ -36,10 +36,13 @@ void facedetect(){
   
 }
 void upload()
-{	char n[5];
-	printf("how many people do you want to upload?\n");
+{	char n[20];
+	char ss[500];
+	printf("what do you want to upload? (Input dir name)\n");
 	scanf("%s",n);
-	printf("%s",n);
+	
+	printf("Input comments to upload\n");
+	scanf("%[^\n]s",ss);
 	DIR *dir_info;
 	struct dirent *dir_entry;
 	dir_info = opendir(".");
@@ -51,7 +54,9 @@ void upload()
 			if(strcmp(dir_entry->d_name, n) ==0)
 			{	char path[20] ="./";
 				strcat(path,dir_entry->d_name);
+				strcat(path,"\n");
 				fwrite(path,strlen(path),1,f);
+				fwrite(ss,strlen(ss),1,f);
 				return ;
 			}
 		}

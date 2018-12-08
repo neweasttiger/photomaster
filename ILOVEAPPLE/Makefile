@@ -1,6 +1,6 @@
 
 autoputo : autoputo.c libsort.a 
-	gcc -o autoputo autoputo.c -L. -lsort
+	gcc -o ../autoputo autoputo.c -L. -lsort
 
 libsort.a : filesort.o 
 	ar rv libsort.a filesort.o
